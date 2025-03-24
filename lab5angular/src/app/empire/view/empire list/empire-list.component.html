@@ -1,0 +1,28 @@
+<article class="text--justified">
+  <header><h2>Empires</h2></header>
+
+  <table *ngIf="empires">
+    <thead>
+    <tr>
+      <th>Login</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let empire of empires.empires">
+      <td>{{empire.name}}</td>
+      <td>
+        <a [routerLink]="['/empires', empire.id]">View</a>
+      </td>
+      <td>
+        <a [routerLink]="['/empires', empire.id, 'edit']">Edit</a>
+      </td>
+      <td>
+        <button (click)="onDelete(empire)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <a [routerLink]="['/empires/create']">Add Empire</a>
+</article>
+

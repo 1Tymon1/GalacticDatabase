@@ -1,0 +1,28 @@
+<article class="text--justified">
+  <header><h2>Colonies</h2></header>
+
+  <table *ngIf="colonies">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let colony of colonies.colonies">
+        <td>{{colony.name}}</td>
+        <td>
+          <a [routerLink]="['/colonies', colony.id]">View</a>
+        </td>
+        <td>
+          <a [routerLink]="['/colonies', colony.id, 'edit']">Edit</a>
+        </td>
+        <td>
+          <button (click)="onDelete(colony)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</article>
