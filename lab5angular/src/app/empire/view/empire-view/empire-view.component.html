@@ -1,0 +1,68 @@
+<article *ngIf="empire">
+  <header><h2>{{empire!.name}}</h2></header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="row mb-2">
+          <div class="col-6">
+            ID
+          </div>
+          <div class="col-6">
+            <span>{{empire!.id}}</span>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-6">
+            population
+          </div>
+          <div class="col-6">
+            <span>{{empire!.population!}}</span>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-6">
+            star systems
+          </div>
+          <div class="col-6">
+            <span>{{empire!.starSystems}}</span>
+          </div>
+        </div>
+
+        <article class="text--justified">
+          <header><h4>Colonies</h4></header>
+
+          <table *ngIf="colonies">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>View</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let colony of colonies.colonies">
+              <td>{{colony.name}}</td>
+              <td>
+                <a [routerLink]="['/colonies', colony.id]">View</a>
+              </td>
+              <td>
+                <a [routerLink]="['/colonies', colony.id, 'edit']">Edit</a>
+              </td>
+              <td>
+                <button (click)="onDelete(colony)">Delete</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </article>
+
+      </div>
+      <a [routerLink]="['/colonies', empire.id, 'create']">Add Colony</a>
+    </div>
+  </div>
+</article>
+

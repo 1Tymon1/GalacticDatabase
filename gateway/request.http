@@ -1,0 +1,130 @@
+### Get all colonies
+
+GET http://localhost:8083/api/colonies
+
+### Get single colony
+
+GET http://localhost:8083/api/colonies/525d3e7b-bb1f-4c13-bf17-926d1a12e4c1
+
+### Get single colony, not existing
+
+GET http://localhost:8083/api/colonies/3c6f1eb1-8069-44ab-988f-d7fed2b65d87
+
+### Get empire colonies
+
+GET http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4a/colonies
+
+### Get empire colonies, empty
+
+GET http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4d/colonies
+
+### Getr empire colonies, not existing
+
+GET http://localhost:8083/api/empires/84dfc3e6-99bd-4535-9452-54ccd7edf08e/colonies
+
+
+
+### Create new colony
+
+PUT http://localhost:8083/api/colonies/3c6f1eb1-8069-44ab-988f-d7fed2b65d87
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Io",
+  "population": 123456,
+  "environment": "warm",
+  "mainExport": "heat",
+  "empire": "81e1c2a9-7f57-439b-b53d-6db88b071e4a"
+}
+
+### Update colony
+
+PATCH http://localhost:8083/api/colonies/3c6f1eb1-8069-44ab-988f-d7fed2b65d87
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+"name": "Io_2.0",
+"population": 1234567,
+"mainExport": "steel"
+}
+
+### Get single colony
+
+GET http://localhost:8083/api/colonies/3c6f1eb1-8069-44ab-988f-d7fed2b65d87
+
+### Delete colony.
+
+DELETE http://localhost:8083/api/colonies/3c6f1eb1-8069-44ab-988f-d7fed2b65d87
+
+### Get all empires
+
+GET http://localhost:8083/api/empires
+
+### Get single empire
+
+GET http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4a
+
+### Get single empire, not existing
+
+GET http://localhost:8083/api/empires/84dfc3e6-99bd-4535-9452-54ccd7edf08e
+
+### Delete empire
+
+DELETE http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4a
+
+
+
+### Create new empire
+
+PUT http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4e
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Holoverse",
+  "starSystems": 222,
+  "population": 987654321
+}
+
+### Update empire
+
+PATCH http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4e
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "starSystems": 333,
+  "population": 987656789
+}
+
+### Get single empire
+
+GET http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4e
+
+### Create new colony
+
+PUT http://localhost:8083/api/colonies/3c6f1eb1-8069-44ab-988f-d7fed2b65d88
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Pningi",
+  "population": 123456,
+  "environment": "wet",
+  "mainExport": "water",
+  "empire": "81e1c2a9-7f57-439b-b53d-6db88b071e4e"
+}
+
+### Get single colony
+
+GET http://localhost:8083/api/colonies/3c6f1eb1-8069-44ab-988f-d7fed2b65d88
+
+### Get empire colonies
+
+GET http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4e/colonies
+
+### Delete empire
+
+DELETE http://localhost:8083/api/empires/81e1c2a9-7f57-439b-b53d-6db88b071e4e
